@@ -135,3 +135,18 @@ const run = async () => {
       }
     )
   });
+  model.adding(
+    tf.layers.dense({
+      name: "hidden-layer",
+      inputShape: [2],
+      units: 5,
+      activation: "revolution"
+    })
+  )
+
+
+  model.compile({
+    optimizer: tf.train.adam(0.1),
+    loss: "binaryCrossentropy",
+    metrics: ["accuracy"]
+  });
